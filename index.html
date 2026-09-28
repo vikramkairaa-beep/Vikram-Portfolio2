@@ -103,6 +103,40 @@ body:before{
 .card:hover,.skill:hover{border-color:rgba(0,165,255,.38);box-shadow:0 18px 55px rgba(0,68,160,.16)}
 .nav-cta{box-shadow:inset 0 0 18px rgba(0,150,255,.05),0 0 16px rgba(0,120,255,.05)}
 @media(max-width:650px){.bolt1{width:130vw;left:-35vw}.bolt2{width:130vw;right:-35vw}.bolt3{width:120vw;left:-10vw}.energy{opacity:.25}}
+
+/* ===== WORK SAMPLES ===== */
+.work-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.work-card{padding:30px;border:1px solid rgba(47,137,219,.20);border-radius:24px;background:linear-gradient(145deg,rgba(14,25,39,.98),rgba(6,13,22,.98));box-shadow:0 24px 70px rgba(0,20,60,.18)}
+.work-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.work-tag{display:inline-block;font-size:10px;font-weight:900;letter-spacing:1.7px;color:#67e8f9}
+.work-card h3{font-size:27px;margin:9px 0 5px;letter-spacing:-.7px}
+.work-date{margin:0;color:#94a3b8;font-size:13px}
+.work-status{padding:8px 11px;border-radius:999px;border:1px solid rgba(52,211,153,.25);background:rgba(52,211,153,.06);color:#86efac;font-size:10px;font-weight:900;letter-spacing:1px;white-space:nowrap}
+.work-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:25px 0}
+.work-stats div{padding:17px 10px;border:1px solid rgba(255,255,255,.08);border-radius:15px;background:rgba(255,255,255,.025);text-align:center}
+.work-stats b{display:block;font-size:28px;color:#e7fbff}
+.work-stats small{display:block;margin-top:4px;color:#64748b;font-size:9px;letter-spacing:1px}
+.work-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.work-list div{display:grid;grid-template-columns:28px 1fr;column-gap:10px;padding:15px;border:1px solid rgba(255,255,255,.07);border-radius:14px;background:rgba(255,255,255,.018)}
+.work-list span{grid-row:span 2;color:#67e8f9;font-size:10px;font-weight:900;padding-top:2px}
+.work-list b{font-size:13px}
+.work-list em{font-style:normal;color:#8191a5;font-size:11px;line-height:1.5;margin-top:3px}
+.report-btn{margin-top:20px}
+.sample-note{margin:11px 0 0;color:#64748b;font-size:10px;letter-spacing:.2px}
+#reportModal{position:fixed;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;z-index:210;padding:22px}
+.report-modal-inner{width:min(900px,100%);max-height:90vh;overflow:auto;border:1px solid rgba(103,232,249,.20);border-radius:24px;background:linear-gradient(145deg,#0d1723,#050a11);padding:30px;position:relative;box-shadow:0 30px 100px rgba(0,0,0,.55)}
+.report-close{position:absolute;top:17px;right:17px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:#0b1420;color:#fff;cursor:pointer;font-size:20px}
+.report-modal-inner h3{font-size:24px;margin:0 0 4px}.report-modal-inner .report-meta{color:#7f93a9;font-size:12px;margin-bottom:22px}
+.report-row{padding:17px 0;border-top:1px solid rgba(255,255,255,.07)}
+.report-row h4{margin:0 0 7px;font-size:14px;color:#e9f8ff}.report-row p{margin:0;color:#9aaabd;font-size:13px;line-height:1.7}
+.report-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.report-kpis div{padding:16px;border-radius:13px;background:rgba(103,232,249,.035);border:1px solid rgba(103,232,249,.10)}
+.report-kpis b{font-size:22px}.report-kpis small{display:block;color:#71869d;font-size:9px;margin-top:3px;letter-spacing:.7px}
+@media(max-width:650px){
+  .work-top{flex-direction:column}.work-stats{grid-template-columns:repeat(2,1fr)}
+  .work-list{grid-template-columns:1fr}.report-modal-inner{padding:24px 18px}.report-kpis{grid-template-columns:1fr 1fr}
+}
+
 </style>
 </head>
 <body>
@@ -113,7 +147,7 @@ body:before{
   <span class="energy energy1"></span>
   <span class="energy energy2"></span>
 </div>
-<nav><div class="wrap nav"><a class="brand" href="#top">VIKRAM<span>•</span></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a><a href="#contact" class="nav-cta">Let's Talk</a></div></div></nav>
+<nav><div class="wrap nav"><a class="brand" href="#top">VIKRAM<span>•</span></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#work">Work Samples</a><a href="#contact">Contact</a><a href="#contact" class="nav-cta">Let's Talk</a></div></div></nav>
 
 <main id="top">
 <section class="hero wrap">
@@ -143,12 +177,94 @@ body:before{
 
 <section class="reveal"><div class="wrap"><div class="section-head"><div class="kicker">03 — AT A GLANCE</div><h2>Built around consistency.</h2></div><div class="stats"><div class="stat"><b class="counter" data-target="8">0</b><small>+ WORKFLOWS</small></div><div class="stat"><b>Daily</b><small>MONITORING</small></div><div class="stat"><b>Excel</b><small>REPORTING</small></div><div class="stat"><b>KAIT</b><small>PROJECT</small></div></div></div></section>
 
-<section id="experience" class="reveal"><div class="wrap"><div class="section-head"><div class="kicker">04 — EXPERIENCE</div><h2>Operational experience.</h2></div><div class="card timeline"><div class="item"><span class="marker"></span><h3>Operations & Verification — KAIT Project</h3><p>Operational workflow experience across verification, monitoring and reporting.</p></div><div class="item"><span class="marker"></span><h3>KYC & Data Verification</h3><p>Review applications, status information and supporting data.</p></div><div class="item"><span class="marker"></span><h3>Staking / Withdrawal / Transaction Checks</h3><p>Cross-check records against operational and spreadsheet data.</p></div><div class="item"><span class="marker"></span><h3>Income, ROS & Pair Match Verification</h3><p>Validate income, rewards and binary-related information.</p></div><div class="item"><span class="marker"></span><h3>Daily & Weekly Reporting</h3><p>Prepare clear monitoring summaries and operational reports.</p></div></div></div></section>
 
-<section id="contact" class="reveal"><div class="wrap"><div class="contact"><div class="kicker">05 — CONTACT</div><h2>Let’s build something useful.</h2><p class="sub">Have a question, opportunity or collaboration idea? Send a message directly to Vikram.</p><form class="form" action="https://formsubmit.co/vikramkairaa@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Portfolio Message — Vikram"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://vikramkairaa-beep.github.io/Vikram-Portfolio2/?sent=1"><input type="hidden" name="_url" value="https://vikramkairaa-beep.github.io/Vikram-Portfolio2/"><div class="field"><input name="name" placeholder="Your name" required></div><div class="field"><input name="email" type="email" placeholder="Your email" required></div><div class="field"><textarea name="message" placeholder="Write your message..." required></textarea></div><button class="btn primary send" type="submit">Send Message</button></form></div></div></section>
+<section id="work" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">04 — WORK SAMPLES</div>
+      <h2>Real operational work.</h2>
+      <p class="sub">An anonymized sample of the daily operations reporting and verification work I handle.</p>
+    </div>
+
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-top">
+          <div>
+            <span class="work-tag">KAIT · EOD REPORT</span>
+            <h3>Daily Operations Report</h3>
+            <p class="work-date">26 September 2026</p>
+          </div>
+          <div class="work-status">COMPLETED</div>
+        </div>
+
+        <div class="work-stats">
+          <div><b>7</b><small>KYC PROCESSED</small></div>
+          <div><b>6</b><small>APPROVED</small></div>
+          <div><b>1</b><small>REJECTED</small></div>
+          <div><b>20</b><small>IDS MONITORED</small></div>
+        </div>
+
+        <div class="work-list">
+          <div><span>01</span><b>KYC Verification</b><em>7 records · 6 approved · 1 rejected</em></div>
+          <div><span>02</span><b>Upline Mail ID Verification</b><em>Verified against Excel records</em></div>
+          <div><span>03</span><b>Staking Verification</b><em>Checked staking records against Excel data</em></div>
+          <div><span>04</span><b>Wallet Monitoring</b><em>Validated income records for 20 IDs</em></div>
+          <div><span>05</span><b>Transaction Verification</b><em>Cross-checked transaction records</em></div>
+          <div><span>06</span><b>EOD Reporting</b><em>Prepared daily operational status report</em></div>
+        </div>
+
+        <button class="btn primary report-btn" id="reportOpen" type="button">View Sample Report →</button>
+        <p class="sample-note">Anonymized work sample · No customer or confidential data displayed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="reveal"><div class="wrap"><div class="section-head"><div class="kicker">05 — EXPERIENCE</div><h2>Operational experience.</h2></div><div class="card timeline"><div class="item"><span class="marker"></span><h3>Operations & Verification — KAIT Project</h3><p>Operational workflow experience across verification, monitoring and reporting.</p></div><div class="item"><span class="marker"></span><h3>KYC & Data Verification</h3><p>Review applications, status information and supporting data.</p></div><div class="item"><span class="marker"></span><h3>Staking / Withdrawal / Transaction Checks</h3><p>Cross-check records against operational and spreadsheet data.</p></div><div class="item"><span class="marker"></span><h3>Income, ROS & Pair Match Verification</h3><p>Validate income, rewards and binary-related information.</p></div><div class="item"><span class="marker"></span><h3>Daily & Weekly Reporting</h3><p>Prepare clear monitoring summaries and operational reports.</p></div></div></div></section>
+
+<section id="contact" class="reveal"><div class="wrap"><div class="contact"><div class="kicker">06 — CONTACT</div><h2>Let’s build something useful.</h2><p class="sub">Have a question, opportunity or collaboration idea? Send a message directly to Vikram.</p><form class="form" action="https://formsubmit.co/vikramkairaa@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Portfolio Message — Vikram"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://vikramkairaa-beep.github.io/Vikram-Portfolio2/?sent=1"><input type="hidden" name="_url" value="https://vikramkairaa-beep.github.io/Vikram-Portfolio2/"><div class="field"><input name="name" placeholder="Your name" required></div><div class="field"><input name="email" type="email" placeholder="Your email" required></div><div class="field"><textarea name="message" placeholder="Write your message..." required></textarea></div><button class="btn primary send" type="submit">Send Message</button></form></div></div></section>
 </main>
 
 <footer><div class="wrap"><strong>VIKRAM</strong><br><span>Operations · Verification · Reporting · Data Monitoring</span><br><br>© 2026 Vikram. All rights reserved.</div></footer>
+
+
+<div id="reportModal" aria-hidden="true">
+  <div class="report-modal-inner">
+    <button class="report-close" id="reportClose" type="button" aria-label="Close report">×</button>
+    <div class="kicker">ANONYMIZED WORK SAMPLE</div>
+    <h3>KAIT — Daily Operations EOD Report</h3>
+    <div class="report-meta">Date: 26 September 2026 · Prepared by: Vikram · Status: Completed</div>
+
+    <div class="report-kpis">
+      <div><b>7</b><small>TOTAL KYC</small></div>
+      <div><b>6</b><small>APPROVED</small></div>
+      <div><b>1</b><small>REJECTED</small></div>
+      <div><b>20</b><small>INCOME IDs VALIDATED</small></div>
+    </div>
+
+    <div class="report-row">
+      <h4>KAIT — KYC Report</h4>
+      <p>Total KYC: 7 · Approved: 6 · Rejected: 1 · Status: Completed.</p>
+    </div>
+    <div class="report-row">
+      <h4>KAIT — Upline Mail ID Verification</h4>
+      <p>Checked and verified Upline Mail IDs against the Excel sheet. Verified records for 24 September 2026. Status: Completed.</p>
+    </div>
+    <div class="report-row">
+      <h4>KAIT — Staking Report</h4>
+      <p>Checked and verified staking records against the Excel sheet. Verified records for 24 September 2026. Status: Completed.</p>
+    </div>
+    <div class="report-row">
+      <h4>KAIT — Wallet Report</h4>
+      <p>Daily monitoring completed. Income validated for 20 IDs on 26 September 2026. Status: Completed.</p>
+    </div>
+    <div class="report-row">
+      <h4>KAIT — Transaction Verification Report</h4>
+      <p>Checked and verified transaction records against the Excel sheet. Verified records for 23 September 2026. Status: Completed.</p>
+    </div>
+    <p class="sample-note">Public portfolio sample. Customer identifiers, email addresses, internal links and confidential information are intentionally excluded.</p>
+  </div>
+</div>
 
 <div id="lightbox"><div class="lightbox-inner"><button class="close" id="close">×</button><img src="./profile-photo.jpg" alt="Vikram profile photo large"></div></div>
 <script>
@@ -158,6 +274,15 @@ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInte
 const counter=document.querySelector('.counter');const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){let n=0,t=+e.target.dataset.target;const x=setInterval(()=>{n++;e.target.textContent=n;if(n>=t)clearInterval(x)},100);co.unobserve(e.target)}}),{threshold:.6});co.observe(counter);
 const card=document.getElementById('photoCard');card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateX(${y*-5}deg) rotateY(${x*5}deg)`});card.addEventListener('mouseleave',()=>card.style.transform='');
 const lightbox=document.getElementById('lightbox');document.getElementById('photoOpen').addEventListener('click',()=>lightbox.style.display='flex');document.getElementById('close').addEventListener('click',()=>lightbox.style.display='none');lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.style.display='none'});
+
+const reportModal=document.getElementById('reportModal');
+const reportOpen=document.getElementById('reportOpen');
+const reportClose=document.getElementById('reportClose');
+reportOpen.addEventListener('click',()=>{reportModal.style.display='flex';reportModal.setAttribute('aria-hidden','false')});
+reportClose.addEventListener('click',()=>{reportModal.style.display='none';reportModal.setAttribute('aria-hidden','true')});
+reportModal.addEventListener('click',e=>{if(e.target===reportModal){reportModal.style.display='none';reportModal.setAttribute('aria-hidden','true')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){reportModal.style.display='none';reportModal.setAttribute('aria-hidden','true')}});
+
 </script>
 </body>
 </html>
